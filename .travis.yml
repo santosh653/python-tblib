@@ -44,10 +44,8 @@ matrix:
         - TOXENV=pypy3,codecov
         - TOXPYTHON=pypy3
       python: 'pypy3'
-      arch: amd64
-      
-      
-      - python: '3.6'
+      arch: amd64   
+    - python: '3.6'
       env:
         - TOXENV=check
       arch: ppc64le
