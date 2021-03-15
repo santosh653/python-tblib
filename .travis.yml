@@ -13,10 +13,7 @@ language: python
 dist: xenial
 cache: false
 env:
-  global:
-    - LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
-    #- LD_PRELOAD=/lib/powerpc64le-linux-gnu/ld-2.31.so
-    - SEGFAULT_SIGNALS=all
+  global: SEGFAULT_SIGNALS=all
     
 matrix:
   include:
@@ -24,60 +21,75 @@ matrix:
       env:
         - TOXENV=check
       arch: amd64
+      global: LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
     - env:
         - TOXENV=py27,codecov
       python: '2.7'
       arch: amd64
+      global: LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
     - env:
         - TOXENV=py35,codecov
       python: '3.5'
       arch: amd64
+      global: LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
     - env:
         - TOXENV=py36,codecov
       python: '3.6'
       arch: amd64
+      global: LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
     - env:
         - TOXENV=py37,codecov
       python: '3.7'
       arch: amd64
+      global: LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
     - env:
         - TOXENV=py38,codecov
       python: '3.8'
       arch: amd64
+      global: LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
     - env:
         - TOXENV=pypy,codecov
       python: 'pypy'
       arch: amd64
+      global: LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
     - env:
         - TOXENV=pypy3,codecov
         - TOXPYTHON=pypy3
       python: 'pypy3'
-      arch: amd64   
+      arch: amd64
+      global: LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
     
     - python: '3.6'
       env:
         - TOXENV=check
       arch: ppc64le
+      global: LD_PRELOAD=/lib/powerpc64le-linux-gnu/ld-2.31.so
     - env:
         - TOXENV=py27,codecov
       python: '2.7'
       arch: ppc64le
+      global: LD_PRELOAD=/lib/powerpc64le-linux-gnu/ld-2.31.so
     - env:
         - TOXENV=py35,codecov
       python: '3.5'
       arch: ppc64le
+      global: LD_PRELOAD=/lib/powerpc64le-linux-gnu/ld-2.31.so
     - env:
         - TOXENV=py36,codecov
       python: '3.6'
       arch: ppc64le
+      global: LD_PRELOAD=/lib/powerpc64le-linux-gnu/ld-2.31.so
     - env:
         - TOXENV=py37,codecov
       python: '3.7'
       arch: ppc64le
+      global: LD_PRELOAD=/lib/powerpc64le-linux-gnu/ld-2.31.so
     - env:
         - TOXENV=py38,codecov
       python: '3.8'
       arch: ppc64le
+      global: LD_PRELOAD=/lib/powerpc64le-linux-gnu/ld-2.31.so
+
 
 before_install:
   - python --version
