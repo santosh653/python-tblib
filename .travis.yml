@@ -15,7 +15,7 @@ cache: false
 env:
   global:
     - LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
-    - LD_PRELOAD=/lib/powerpc64le-linux-gnu/ld-2.31.so
+    #- LD_PRELOAD=/lib/powerpc64le-linux-gnu/ld-2.31.so
     - SEGFAULT_SIGNALS=all
     
 matrix:
