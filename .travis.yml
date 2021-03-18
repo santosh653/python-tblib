@@ -62,31 +62,31 @@ matrix:
     - python: '3.6'
       env:
         - TOXENV=check
-        - LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
+        - LD_PRELOAD=/lib/powerpc64le-linux-gnu/ld-2.31.so
       arch: ppc64le
     - env:
         - TOXENV=py27,codecov
-        - LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
+        - LD_PRELOAD=/lib/powerpc64le-linux-gnu/ld-2.31.so
       python: '2.7'
       arch: ppc64le
     - env:
         - TOXENV=py35,codecov
-        - LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
+        - LD_PRELOAD=/lib/powerpc64le-linux-gnu/ld-2.31.so
       python: '3.5'
       arch: ppc64le
     - env:
         - TOXENV=py36,codecov
-        - LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
+        - LD_PRELOAD=/lib/powerpc64le-linux-gnu/ld-2.31.so
       python: '3.6'
       arch: ppc64le
     - env:
         - TOXENV=py37,codecov
-        - LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
+        - LD_PRELOAD=/lib/powerpc64le-linux-gnu/ld-2.31.so
       python: '3.7'
       arch: ppc64le
     - env:
         - TOXENV=py38,codecov
-        - LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
+        - LD_PRELOAD=/lib/powerpc64le-linux-gnu/ld-2.31.so
       python: '3.8'
       arch: ppc64le
       
