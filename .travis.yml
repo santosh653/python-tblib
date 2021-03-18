@@ -2,7 +2,7 @@
 #
 # Package             : tblib
 # Source Repo         : https://github.com/ionelmc/python-tblib
-# Travis Job Link     : https://travis-ci.com/github/santosh653/pylibdmtx
+# Travis Job Link     : https://travis-ci.com/github/santosh653/python-tblib
 # Created travis.yml  : No
 # Maintainer          : Santosh Kulkarni <santoshkulkarni70@gmail.com>
 #
@@ -20,75 +20,76 @@ matrix:
     - python: '3.6'
       env:
         - TOXENV=check
+        - LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
       arch: amd64
-      global: LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
     - env:
         - TOXENV=py27,codecov
+        - LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
       python: '2.7'
       arch: amd64
-      global: LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
     - env:
         - TOXENV=py35,codecov
+        - LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
       python: '3.5'
       arch: amd64
-      global: LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
     - env:
         - TOXENV=py36,codecov
+        - LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
       python: '3.6'
       arch: amd64
-      global: LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
     - env:
         - TOXENV=py37,codecov
+        - LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
       python: '3.7'
       arch: amd64
-      global: LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
     - env:
         - TOXENV=py38,codecov
+        - LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
       python: '3.8'
       arch: amd64
-      global: LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
     - env:
         - TOXENV=pypy,codecov
+        - LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
       python: 'pypy'
       arch: amd64
-      global: LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
     - env:
         - TOXENV=pypy3,codecov
         - TOXPYTHON=pypy3
+        - LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
       python: 'pypy3'
       arch: amd64
-      global: LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
-    
+          
     - python: '3.6'
       env:
         - TOXENV=check
+        - LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
       arch: ppc64le
-      global: LD_PRELOAD=/lib/powerpc64le-linux-gnu/ld-2.31.so
     - env:
         - TOXENV=py27,codecov
+        - LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
       python: '2.7'
       arch: ppc64le
-      global: LD_PRELOAD=/lib/powerpc64le-linux-gnu/ld-2.31.so
     - env:
         - TOXENV=py35,codecov
+        - LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
       python: '3.5'
       arch: ppc64le
-      global: LD_PRELOAD=/lib/powerpc64le-linux-gnu/ld-2.31.so
     - env:
         - TOXENV=py36,codecov
+        - LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
       python: '3.6'
       arch: ppc64le
-      global: LD_PRELOAD=/lib/powerpc64le-linux-gnu/ld-2.31.so
     - env:
         - TOXENV=py37,codecov
+        - LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
       python: '3.7'
       arch: ppc64le
-      global: LD_PRELOAD=/lib/powerpc64le-linux-gnu/ld-2.31.so
     - env:
         - TOXENV=py38,codecov
+        - LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
       python: '3.8'
       arch: ppc64le
-      global: LD_PRELOAD=/lib/powerpc64le-linux-gnu/ld-2.31.so
+      
 
 
 before_install:
