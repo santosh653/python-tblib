@@ -13,8 +13,8 @@ language: python
 dist: xenial
 cache: false
 env:
-  global: SEGFAULT_SIGNALS=all
   global: 
+  - SEGFAULT_SIGNALS=all
   - if [[ "$TRAVIS_CPU_ARCH" = "amd64" ]]; then
       LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
     fi
