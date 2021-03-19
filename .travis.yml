@@ -15,14 +15,16 @@ dist: xenial
 os: linux
 cache: false
 env:
-  global: 
+  global:
   - SEGFAULT_SIGNALS=all
-  - if [[ "$TRAVIS_CPU_ARCH" = "amd64" ]]; then
+  - |
+     if [[ "$TRAVIS_CPU_ARCH" = "amd64" ]]; then
       LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
-    fi
-  - if [[ "$TRAVIS_CPU_ARCH" = "ppc64le" ]]; then
+     fi
+  - |
+     if [[ "$TRAVIS_CPU_ARCH" = "ppc64le" ]]; then
       LD_PRELOAD=/lib/powerpc64le-linux-gnu/ld-2.31.so
-    fi
+     fi
      
 matrix:
   include:
