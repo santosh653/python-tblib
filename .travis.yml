@@ -11,6 +11,7 @@
 # ----------------------------------------------------------------------------
 language: python
 dist: xenial
+os: linux
 cache: false
 env:
   global: 
