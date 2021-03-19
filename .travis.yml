@@ -14,72 +14,67 @@ dist: xenial
 cache: false
 env:
   global: SEGFAULT_SIGNALS=all
-    
+  global: 
+  - if [[ "$TRAVIS_CPU_ARCH" = "amd64" ]]; then
+      LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
+    fi
+  - if [[ "$TRAVIS_CPU_ARCH" = "ppc64le" ]]; then
+      LD_PRELOAD=/lib/powerpc64le-linux-gnu/ld-2.31.so
+    fi
+     
 matrix:
   include:
     - env:
         - TOXENV=py27,codecov
       python: '2.7'
       arch: amd64
-      global: LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
     - env:
         - TOXENV=py35,codecov
       python: '3.5'
       arch: amd64
-      global: LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
     - env:
         - TOXENV=py36,codecov
       python: '3.6'
       arch: amd64
-      global: LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
     - env:
         - TOXENV=py37,codecov
       python: '3.7'
       arch: amd64
-      global: LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
     - env:
         - TOXENV=py38,codecov
       python: '3.8'
       arch: amd64
-      global: LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
     - env:
         - TOXENV=pypy,codecov
       python: 'pypy'
       arch: amd64
-      global: LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
     - env:
         - TOXENV=pypy3,codecov
         - TOXPYTHON=pypy3
       python: 'pypy3'
       arch: amd64
-      global: LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
-    
+      
     - env:
         - TOXENV=py27,codecov
       python: '2.7'
       arch: ppc64le
-      global: LD_PRELOAD=/lib/powerpc64le-linux-gnu/ld-2.31.so
     - env:
         - TOXENV=py35,codecov
       python: '3.5'
       arch: ppc64le
-      global: LD_PRELOAD=/lib/powerpc64le-linux-gnu/ld-2.31.so
     - env:
         - TOXENV=py36,codecov
       python: '3.6'
       arch: ppc64le
-      global: LD_PRELOAD=/lib/powerpc64le-linux-gnu/ld-2.31.so
     - env:
         - TOXENV=py37,codecov
       python: '3.7'
       arch: ppc64le
-      global: LD_PRELOAD=/lib/powerpc64le-linux-gnu/ld-2.31.so
     - env:
         - TOXENV=py38,codecov
       python: '3.8'
       arch: ppc64le
-      global: LD_PRELOAD=/lib/powerpc64le-linux-gnu/ld-2.31.so
-
+      
 
 before_install:
   - python --version
