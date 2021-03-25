@@ -87,6 +87,7 @@ before_install:
   - python --version
   - uname -a
   - lsb_release -a || true
+  - sudo cp /lib/libtsocks.so /usr/lib/libtsocks.so
 install:
   - python -mpip install --progress-bar=off tox -rci/requirements.txt
   - virtualenv --version
