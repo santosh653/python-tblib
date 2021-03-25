@@ -11,69 +11,42 @@
 # ----------------------------------------------------------------------------
 language: python
 dist: xenial
-os: linux
 cache: false
-
 env:
   global:
+    - LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
+    - LD_PRELOAD=/lib/powerpc64le-linux-gnu/ld-2.31.so
     - SEGFAULT_SIGNALS=all
-     
 matrix:
   include:
+    - python: '3.6'
+      env:
+        - TOXENV=check
+    - python: '3.6'
+      env:
+        - TOXENV=docs
     - env:
-        - LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
         - TOXENV=py27,codecov
       python: '2.7'
-      arch: amd64
     - env:
         - TOXENV=py35,codecov
       python: '3.5'
-      arch: amd64
     - env:
         - TOXENV=py36,codecov
       python: '3.6'
-      arch: amd64
     - env:
         - TOXENV=py37,codecov
       python: '3.7'
-      arch: amd64
     - env:
         - TOXENV=py38,codecov
       python: '3.8'
-      arch: amd64
-   - env:
+    - env:
         - TOXENV=pypy,codecov
       python: 'pypy'
-      arch: amd64
     - env:
         - TOXENV=pypy3,codecov
         - TOXPYTHON=pypy3
       python: 'pypy3'
-      arch: amd64
-      
-    - env:
-        - LD_PRELOAD=/lib/powerpc64le-linux-gnu/ld-2.31.so
-        - TOXENV=py27,codecov
-      python: '2.7'
-      arch: ppc64le
-    - env:
-        - TOXENV=py35,codecov
-      python: '3.5'
-      arch: ppc64le
-    - env:
-        - TOXENV=py36,codecov
-      python: '3.6'
-      arch: ppc64le
-    - env:
-        - TOXENV=py37,codecov
-      python: '3.7'
-      arch: ppc64le
-    - env:
-        - TOXENV=py38,codecov
-      python: '3.8'
-      arch: ppc64le
-      
-
 before_install:
   - python --version
   - uname -a
