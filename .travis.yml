@@ -10,7 +10,7 @@
 #
 # ----------------------------------------------------------------------------
 language: python
-dist: xenial
+dist: focal
 cache: false
 env:
   global:
