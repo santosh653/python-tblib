@@ -10,7 +10,7 @@
 #
 # ----------------------------------------------------------------------------
 language: python
-dist: focal
+dist: xeniel
 cache: false
 env:
   global:
@@ -57,27 +57,27 @@ matrix:
     
     - env:
         - TOXENV=py27,codecov
-        - LD_PRELOAD=/snap/snapd/11113/lib/powerpc64le-linux-gnu/libSegFault.so
+        - LD_PRELOAD=/usr/lib64/ld64.so.2
       python: '2.7'
       arch: ppc64le
     - env:
         - TOXENV=py35,codecov
-        - LD_PRELOAD=/snap/snapd/11113/lib/powerpc64le-linux-gnu/libSegFault.so
+        - LD_PRELOAD=/usr/lib64/ld64.so.2
       python: '3.5'
       arch: ppc64le
     - env:
         - TOXENV=py36,codecov
-        - LD_PRELOAD=/snap/snapd/11113/lib/powerpc64le-linux-gnu/libSegFault.so
+        - LD_PRELOAD=/usr/lib64/ld64.so.2
       python: '3.6'
       arch: ppc64le
     - env:
         - TOXENV=py37,codecov
-        - LD_PRELOAD=/snap/snapd/11113/lib/powerpc64le-linux-gnu/libSegFault.so
+        - LD_PRELOAD=/usr/lib64/ld64.so.2
       python: '3.7'
       arch: ppc64le
     - env:
         - TOXENV=py38,codecov
-        - LD_PRELOAD=/snap/snapd/11113/lib/powerpc64le-linux-gnu/libSegFault.so
+        - LD_PRELOAD=/usr/lib64/ld64.so.2
       python: '3.8'
       arch: ppc64le
     
