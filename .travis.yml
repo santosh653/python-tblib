@@ -10,7 +10,8 @@
 #
 # ----------------------------------------------------------------------------
 language: python
-dist: xeniel
+dist: xenial
+os: linux
 cache: false
 env:
   global:
