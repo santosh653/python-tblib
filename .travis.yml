@@ -11,7 +11,7 @@
 # ----------------------------------------------------------------------------
 language: python
 dist: focal
-os: linux
+#os: linux
 cache: false
 env:
   global:
