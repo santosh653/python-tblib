@@ -1,5 +1,5 @@
 language: python
-dist: xenial
+dist: focal
 cache: false
 env:
   global:
@@ -39,6 +39,7 @@ before_install:
   - python --version
   - uname -a
   - lsb_release -a || true
+  - cat /etc/issue
 install:
   - python -mpip install --progress-bar=off tox -rci/requirements.txt
   - virtualenv --version
